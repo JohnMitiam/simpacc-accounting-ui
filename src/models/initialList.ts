@@ -1,9 +1,10 @@
 export const list = [
   {
     id: '1',
-    namaewa: 'Kozuki Oden',
+    firstName: 'Oden',
+    lastName: 'Kozuki',
+    email: 'kozuki.oden@gmail.com',
     description: 'Shogun',
-    created: '28/07/2023',
-    status: 'Active',
+    birthday: '28/07/2023',
   },
 ];

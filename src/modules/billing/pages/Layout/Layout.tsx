@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+// eslint-disable-next-line import/order
+import { ToastContainer, toast } from 'react-toastify';
 
 import { ToggleButtonContainer } from '@components/ButtonSwitchContainer/ButtonToggleContainer';
 import { Moon } from '@components/ButtonSwitchContainer/React-Icon/Moon';
@@ -11,26 +12,31 @@ interface IProps {
 }
 
 export const Layout: React.FC<IProps> = ({ children }) => {
-  const notify = () => {
-    toast.success('Let There Be Light', {
-      position: toast.POSITION.TOP_CENTER,
+  const notifyLight = () => {
+    toast.info('Let There Be Light', {
+      position: toast.POSITION.TOP_RIGHT,
       theme: 'colored',
-      autoClose: 2000,
+      autoClose: 10,
     });
   };
+
+  const notifyDark = () => {
+    toast.info('Lets Get Dark', {
+      position: toast.POSITION.TOP_RIGHT,
+      theme: 'colored',
+      autoClose: 10,
+    });
+  };
+
   const [letThereBeLightBut, setLetThereBeLightBut] = useState(true);
   const [bgColor, setBgColor] = useState('white');
   const [letsGetDarkBut, setLetsGetDarkBut] = useState(false);
 
   const handleLetTherebeLightBut = () => {
-    {
-      notify;
-    }
+    notifyLight();
     setBgColor('white');
     setLetThereBeLightBut(true);
     setLetsGetDarkBut(false);
-
-    // alert('Let There Be Light');
   };
 
   const selLetThereBeLightButClass = letThereBeLightBut
@@ -38,11 +44,10 @@ export const Layout: React.FC<IProps> = ({ children }) => {
     : 'stroke-black px-2 rounded-full';
 
   const handleLetsDarkBut = () => {
+    notifyDark();
     setBgColor('#909090');
     setLetThereBeLightBut(false);
     setLetsGetDarkBut(true);
-
-    // alert('Lets Get Dark');
   };
 
   const selLetsDarkButClass = letsGetDarkBut
@@ -55,22 +60,22 @@ export const Layout: React.FC<IProps> = ({ children }) => {
 
   return (
     <>
-      <ToggleButtonContainer>
-        <button
-          onClick={() => handleLetTherebeLightBut()}
-          className={`${selLetThereBeLightButClass}`}
-        >
-          <Sun />
-        </button>
-        <ToastContainer />
-        <button
-          onClick={() => handleLetsDarkBut()}
-          className={`${selLetsDarkButClass}`}
-        >
-          <Moon />
-        </button>
-      </ToggleButtonContainer>
-      <div className="bg-sky-900 py-8">
+      <div className="bg-sky-900 py-6">
+        <ToggleButtonContainer>
+          <button
+            onClick={() => handleLetTherebeLightBut()}
+            className={`${selLetThereBeLightButClass}`}
+          >
+            <Sun />
+          </button>
+          <ToastContainer />
+          <button
+            onClick={() => handleLetsDarkBut()}
+            className={`${selLetsDarkButClass}`}
+          >
+            <Moon />
+          </button>
+        </ToggleButtonContainer>
         <h1 className="text-4xl text-center text-yellow-100">Contact App</h1>
       </div>
       <div className=" mx-auto">{children}</div>
