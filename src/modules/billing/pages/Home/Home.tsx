@@ -65,7 +65,6 @@ export const Home = () => {
           </div>
         </div>
       </div>
-      <div>Changes</div>
     </>
   );
 };
