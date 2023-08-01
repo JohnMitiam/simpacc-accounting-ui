@@ -20,23 +20,27 @@ export const Create = () => {
 
   return (
     <>
-      <div className="flex py-4">
-        <div className="container max-w-7xl px-4 mx-auto sm:px-8">
-          <div className="">
-            <div className="px-4 py-4 -mx-4 overflow-x-auto sm:-mx-8 sm:px-8">
-              <div className="bg-white pl-96 py-8 inline-block min-w-full overflow-hidden rounded-lg shadow">
-                <InputText name="name" placeholder="First Name" />
-                <InputText name="name" placeholder="Last Name" />
-                <InputText name="email" placeholder="Email" />
-                <InputText name="name" placeholder="Description" />
-                <InputText name="name" placeholder="Birthday" />
-                <div className="px-32 pt-4 space-x-4">
-                  <UpdateButtonCreate onClick={''} />
-                  <CreateButton onClick={handleCreateClick} />
-                  <ToastContainer />
-                </div>
-              </div>
-            </div>
+      <div className="container max-w-7xl px-4 m-8 mx-auto sm:px-8">
+        {/* <div className="bg-white py-8 inline-block min-w-full overflow-hidden rounded-lg shadow"> */}
+        <div className="bg-white py-6 rounded-lg shadow">
+          <div>
+            <h1 className=" py-8 text-3xl font-bold text-center">
+              Create Information
+            </h1>
+          </div>
+          <InputText name="name" placeholder="First Name" label="First Name" />
+          <InputText name="name" placeholder="Last Name" label="Last Name" />
+          <InputText name="email" placeholder="Email" label="Email" />
+          <InputText
+            name="name"
+            placeholder="Description"
+            label="Description"
+          />
+          <InputText name="name" placeholder="Birthday" label="Birthday" />
+          <div className="flex space-x-4 justify-center">
+            <UpdateButtonCreate onClick={'#'} />
+            <CreateButton onClick={handleCreateClick} />
+            <ToastContainer />
           </div>
         </div>
       </div>

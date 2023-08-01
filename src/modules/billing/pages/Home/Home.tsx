@@ -1,4 +1,7 @@
-import { CreateButton } from '@components/ActionButtons/CreateButtons';
+import { Route, Routes } from 'react-router-dom';
+
+import { CreateButtonMain } from '@components/ActionButtons/CreateButtonsMain';
+import { Create } from '@components/Page/Create';
 import { list } from 'src/models/initialList.ts';
 import { InitialListItems } from 'src/modules/billing/components/InitialListItems';
 
@@ -10,7 +13,10 @@ export const Home = () => {
           <div className="">
             <div className="px-4 py-4 -mx-4 overflow-x-auto sm:-mx-8 sm:px-8">
               <div className="flex justify-end mb-4">
-                <CreateButton onClick={''} />
+                <CreateButtonMain />
+                <Routes>
+                  <Route path="create" element={<Create />}></Route>
+                </Routes>
               </div>
               <div className="inline-block min-w-full overflow-hidden rounded-lg shadow">
                 <table className="min-w-full leading-normal shadow-lg border-2">
