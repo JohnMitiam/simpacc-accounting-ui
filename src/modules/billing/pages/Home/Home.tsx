@@ -1,3 +1,4 @@
+// import { Route, Routes } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
 
 import { CreateButtonMain } from '@components/ActionButtons/CreateButtonsMain';
@@ -13,9 +14,9 @@ export const Home = () => {
           <div className="">
             <div className="px-4 py-4 -mx-4 overflow-x-auto sm:-mx-8 sm:px-8">
               <div className="flex justify-end mb-4">
-                <CreateButtonMain />
+                <CreateButtonMain to="/create">+ Create </CreateButtonMain>
                 <Routes>
-                  <Route path="create" element={<Create />}></Route>
+                  <Route path="/create" element={<Create />}></Route>
                 </Routes>
               </div>
               <div className="inline-block min-w-full overflow-hidden rounded-lg shadow">

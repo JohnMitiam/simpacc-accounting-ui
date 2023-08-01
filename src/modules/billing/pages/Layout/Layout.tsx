@@ -14,7 +14,7 @@ interface IProps {
 export const Layout: React.FC<IProps> = ({ children }) => {
   const notifyLight = () => {
     toast.info('Let There Be Light', {
-      position: toast.POSITION.TOP_RIGHT,
+      position: toast.POSITION.BOTTOM_RIGHT,
       theme: 'colored',
       autoClose: 10,
     });
@@ -22,7 +22,7 @@ export const Layout: React.FC<IProps> = ({ children }) => {
 
   const notifyDark = () => {
     toast.info('Lets Get Dark', {
-      position: toast.POSITION.TOP_RIGHT,
+      position: toast.POSITION.BOTTOM_RIGHT,
       theme: 'colored',
       autoClose: 10,
     });
