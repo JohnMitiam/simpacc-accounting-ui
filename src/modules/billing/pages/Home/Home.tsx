@@ -1,12 +1,12 @@
 // import { Route, Routes } from 'react-router-dom';
-import { Route, Routes } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 import { CreateButtonMain } from '@components/ActionButtons/CreateButtonsMain';
-import { Create } from '@components/Page/Create';
 import { list } from 'src/models/initialList.ts';
 import { InitialListItems } from 'src/modules/billing/components/InitialListItems';
 
 export const Home = () => {
+  // const navigate = useNavigate();
   return (
     <>
       <div className="text-center py-4">
@@ -15,9 +15,13 @@ export const Home = () => {
             <div className="px-4 py-4 -mx-4 overflow-x-auto sm:-mx-8 sm:px-8">
               <div className="flex justify-end mb-4">
                 <CreateButtonMain to="/create">+ Create </CreateButtonMain>
-                <Routes>
-                  <Route path="/create" element={<Create />}></Route>
-                </Routes>
+                {/* <button
+                  onClick={() => {
+                    navigate('/create');
+                  }}
+                >
+                  Navigate
+                </button> */}
               </div>
               <div className="inline-block min-w-full overflow-hidden rounded-lg shadow">
                 <table className="min-w-full leading-normal shadow-lg border-2">

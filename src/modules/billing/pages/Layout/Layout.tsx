@@ -66,14 +66,14 @@ export const Layout: React.FC<IProps> = ({ children }) => {
             onClick={() => handleLetTherebeLightBut()}
             className={`${selLetThereBeLightButClass}`}
           >
-            <Sun />
+            <Sun height="20" width="20" />
           </button>
           <ToastContainer />
           <button
             onClick={() => handleLetsDarkBut()}
             className={`${selLetsDarkButClass}`}
           >
-            <Moon />
+            <Moon height="20" width="20" />
           </button>
         </ToggleButtonContainer>
         <h1 className="text-4xl text-center text-yellow-100">Contact App</h1>
