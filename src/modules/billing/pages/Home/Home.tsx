@@ -14,7 +14,9 @@ export const Home = () => {
           <div className="">
             <div className="px-4 py-4 -mx-4 overflow-x-auto sm:-mx-8 sm:px-8">
               <div className="flex justify-end mb-4">
-                <CreateButtonMain to="/create">+ Create </CreateButtonMain>
+                <CreateButtonMain to="/create" onClick={undefined}>
+                  + Create
+                </CreateButtonMain>
                 <Routes>
                   <Route path="/create" element={<Create />}></Route>
                 </Routes>
@@ -72,7 +74,6 @@ export const Home = () => {
           </div>
         </div>
       </div>
-      <h1>Change</h1>
     </>
   );
 };
